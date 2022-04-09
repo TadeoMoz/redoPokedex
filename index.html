@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="areaSuperior">
+            <span class="circulo"></span>
+            <span class="circulo small"></span>
+            <span class="circulo small"></span>
+            <span class="circulo small"></span>
+        </div>
+        <div class="display">
+            <div class="tarjetaPokemon">
+                <div class="displaySuperior">
+                    <span id="pokeId"></span>
+                    <img src="" alt="" id="pokePic">
+                    <span id="tipoPoke"></span>
+                    <h4 id="nombrePoke"></h4>
+                </div>
+            <!--
+                    <div class="menuDisplay">
+                    <ul class="pokeMenu">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Stats</a></li>
+                        <li><a href="#">Evo</a></li>
+                        <li><a href="#">Moves</a></li>
+                    </ul>
+                </div>
+            -->
+                <div class="stats">
+                    <span id="hp"></span>
+                    <p class="barra"></p>
+                
+                    <span id="atk"></span>
+                    <p class="barra"></p>
+
+                    <span id="def"></span>
+                    <p class="barra"></p>
+                
+                    <span id="satk"></span>
+                    <p class="barra"></p>
+                
+                    <span id="sdef"></span>
+                    <p class="barra"></p>
+                
+                    <span id="spd"></span>
+                    <p class="barra"></p>
+                </div>
+            </div>
+        </div>
+        <div class="areaInferior">
+            <div class="otros">
+                <span class="circulo medium"></span>
+                <span class="rectangulo"></span>
+                <span class="rectangulo"></span>
+            </div>
+
+            <div class="buscador">
+                <input type="text" placeholder="Ingresar nombre o Id" id="buscar">
+                <input type="submit" onclick="buscarPoke()">
+            </div>
+
+            <div class="pad">
+                <span class="cruceta"></span>
+                <span class="cruceta"></span>
+                <span class="cruceta"></span>
+                <span class="cruceta"></span>
+                <span class="cruceta"></span>
+            </div>            
+        </div>
+    </div>
+    <script src="app2.js"></script>
+</body>
+</html>
