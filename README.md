@@ -4,9 +4,6 @@ Se utilizo mayormente CSS para la generación del documento, javascript para añ
 
 https://pokeapi.co/
 
-## Imagen
-/pokedex-v2.png
-
 ## Pendientes
 Aún quedan cosas por corregir
 
@@ -17,3 +14,8 @@ Aún quedan cosas por corregir
 
 ## Notas
 Aún sigo aprendiendo GIT.
+Como siempre los Docs son una buen lugar para empezar ~~
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
+## Imagen
+![version 2](pokedex-v2.png)
