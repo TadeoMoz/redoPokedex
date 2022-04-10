@@ -44,9 +44,9 @@ statPokemon = (data) => {
     const spd = document.getElementById('spd');
 
     /* Agrego texto al documento  */
-    hp.innerText = 'HP: ' + data.stats[0].base_stat;;
-    atk.innerText = 'ATK: ' + data.stats[1].base_stat;
-    def.innerText = 'DEF: ' + data.stats[2].base_stat;
+    hp.innerText = 'Hp: ' + data.stats[0].base_stat;;
+    atk.innerText = 'Atk: ' + data.stats[1].base_stat;
+    def.innerText = 'Def: ' + data.stats[2].base_stat;
     satk.innerText = 'SAtk: ' + data.stats[3].base_stat;
     sdef.innerText = 'SDef: ' + data.stats[4].base_stat;
     spd.innerText = 'Spd: ' + data.stats[5].base_stat;
