@@ -23,19 +23,27 @@ nombrePokemon = (data) => {
     nombre.innerText = data.name.toUpperCase();
 
     const pokeId = document.getElementById('pokeId');
-    pokeId.innerText = 'Id: ' + data.id;
-
-    const tipo = document.getElementById('tipoPoke');
-    tipo.innerText = data.types[0].type.name.toUpperCase();
+    pokeId.innerText = data.id;
 
     const pic = document.getElementById('pokePic');
     pic.setAttribute('style', 'display:block;');
     pic.src = data.sprites.other.home.front_default;
-    
+
+    /* */
+    let tipo = document.getElementById('tipoPoke');
+
+    for(let i = 0; i < data.types.length ; i++) {
+        let a = document.createElement('em');
+        a.classList.add('tipoPk');
+        
+        a.innerText = data.types[i].type.name.toLowerCase();
+        tipo.appendChild(a);
+    }
+
+    console.log(tipo)
 }
 
-statPokemon = (data) => {
-    /* Obtengo los elementos html */
+statPokemon = (data) => { /* Obtengo los elementos html */
     const hp = document.getElementById('hp');
     const atk = document.getElementById('atk');
     const def = document.getElementById('def');
@@ -44,7 +52,7 @@ statPokemon = (data) => {
     const spd = document.getElementById('spd');
 
     /* Agrego texto al documento  */
-    hp.innerText = 'Hp: ' + data.stats[0].base_stat;;
+    hp.innerText = 'Hp: ' + data.stats[0].base_stat;
     atk.innerText = 'Atk: ' + data.stats[1].base_stat;
     def.innerText = 'Def: ' + data.stats[2].base_stat;
     satk.innerText = 'SAtk: ' + data.stats[3].base_stat;

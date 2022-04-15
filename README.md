@@ -5,13 +5,10 @@ Se utilizo mayormente CSS para la generación del documento, javascript para añ
 
 https://pokeapi.co/
 
-## Pendientes
-Aún quedan cosas por corregir
+## Actualización
+Se cambiaron los valores de PX a REM.
 
-- Mostrar los diferentes TIPOS de un pokemon.
-- Añadir estilos a los TIPOS
-- Añadir estilos al ID del pokemon
-- Agregar algunas animaciones con CSS
+Se añadieron variables globales a CSS
 
 ## Imagen
 ![version 3](pokedex-v2.png)
