@@ -5,10 +5,6 @@
     --sombra-Display: rgba(50, 172, 172, 0.84);
     --fondo-Display: #00a5d1;
     --sombra-Exterior: 1.125rem 1rem 0.825rem -0.25rem rgba(0,0,0,0.62);
-    /* test */
-    --test: #0080d1;
-    --main-bg: #fff;
-    --main-color: #000;
 }
 
 * { margin: 0; }
@@ -28,7 +24,7 @@ input[type=submit]{
 
 .contenedor {
     max-width: 26.25rem;
-    /* margin: auto; */
+    margin: auto;
     display: grid;
     grid-template-rows: auto 24rem auto;
     grid-template-areas: 
@@ -113,19 +109,6 @@ input[type=submit]{
     display: none;
 }
 
-/*
-.menuDisplay {
-    padding-top: 3rem;
-    display: flex;
-    justify-content: center;
-}
-
-.pokeMenu {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-}
-*/
 .stats { padding: 3rem; }
 
 .barra {
@@ -204,8 +187,6 @@ input[type=submit]{
 .cruceta:nth-child(3) {grid-area: mi;}
 .cruceta:nth-child(4) {grid-area: ri;}
 .cruceta:nth-child(5) {grid-area: do;}
-
-
 
 /* testing POKE ID y POKE TIPO*/
 #pokeId {

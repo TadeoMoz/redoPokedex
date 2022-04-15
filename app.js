@@ -28,19 +28,20 @@ nombrePokemon = (data) => {
     const pic = document.getElementById('pokePic');
     pic.setAttribute('style', 'display:block;');
     pic.src = data.sprites.other.home.front_default;
+    
+    agregarTipo(data);
+}
 
-    /* */
+function agregarTipo(data) {
     let tipo = document.getElementById('tipoPoke');
-
     for(let i = 0; i < data.types.length ; i++) {
         let a = document.createElement('em');
+        
         a.classList.add('tipoPk');
         
         a.innerText = data.types[i].type.name.toLowerCase();
         tipo.appendChild(a);
-    }
-
-    console.log(tipo)
+    }    
 }
 
 statPokemon = (data) => { /* Obtengo los elementos html */
@@ -59,7 +60,10 @@ statPokemon = (data) => { /* Obtengo los elementos html */
     sdef.innerText = 'SDef: ' + data.stats[4].base_stat;
     spd.innerText = 'Spd: ' + data.stats[5].base_stat;
 
-    /* Este for añade la 'barra' y cambia el color de la misma */
+    agregarBarras(data);
+}
+
+function agregarBarras(data) {
     for(let i = 0 ; i < data.stats.length ; i++){
         let a = 1;
         document.querySelector(`p:nth-of-type(${a+=i})`).setAttribute('style', `width:${data.stats[i].base_stat}px; background-color: rgb(${Math.random() * (246 - 1) + 10},${Math.random() * (246 - 1) + 10},${Math.random() * (246 - 1) + 10})`);
