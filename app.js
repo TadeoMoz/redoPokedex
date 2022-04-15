@@ -1,6 +1,16 @@
-/* Creo la funcion async para obtener el pokemon */
+const pokeInput = document.getElementById('buscar'); /* buscarPoke */
+const nombre = document.getElementById('nombrePoke'); /* nombrePokemon */
+const pokeId = document.getElementById('pokeId');
+const pic = document.getElementById('pokePic');
+const tipo = document.getElementById('tipoPoke'); /* agregarPoke */
+const hp = document.getElementById('hp'); /* Añadir texto */
+const atk = document.getElementById('atk');
+const def = document.getElementById('def');
+const satk = document.getElementById('satk');
+const sdef = document.getElementById('sdef');
+const spd = document.getElementById('spd');
+
 const buscarPoke = () => {
-    const pokeInput = document.getElementById('buscar');
     let pokeNombre = pokeInput.value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeNombre}`;
 
@@ -8,24 +18,19 @@ const buscarPoke = () => {
         if(res.status != '200') {
             console.log('error'); 
         } else {
-            return res.json(); /* Regresa los datos en json */
+            return res.json();
         }
     }).then((data) => {
-        console.log(data);
-        nombrePokemon(data); /* Envio los datos a las funciones */
+        //console.log(data);
+        nombrePokemon(data);
         statPokemon(data);
     })
 }
 
-/* Mis funciones */
-nombrePokemon = (data) => {
-    const nombre = document.getElementById('nombrePoke');
+nombrePokemon = (data) => {    
     nombre.innerText = data.name.toUpperCase();
-
-    const pokeId = document.getElementById('pokeId');
     pokeId.innerText = data.id;
 
-    const pic = document.getElementById('pokePic');
     pic.setAttribute('style', 'display:block;');
     pic.src = data.sprites.other.home.front_default;
     
@@ -33,7 +38,6 @@ nombrePokemon = (data) => {
 }
 
 function agregarTipo(data) {
-    let tipo = document.getElementById('tipoPoke');
     for(let i = 0; i < data.types.length ; i++) {
         let a = document.createElement('em');
         
@@ -44,15 +48,7 @@ function agregarTipo(data) {
     }    
 }
 
-statPokemon = (data) => { /* Obtengo los elementos html */
-    const hp = document.getElementById('hp');
-    const atk = document.getElementById('atk');
-    const def = document.getElementById('def');
-    const satk = document.getElementById('satk');
-    const sdef = document.getElementById('sdef');
-    const spd = document.getElementById('spd');
-
-    /* Agrego texto al documento  */
+statPokemon = (data) => { /* Agrego texto al documento  */
     hp.innerText = 'Hp: ' + data.stats[0].base_stat;
     atk.innerText = 'Atk: ' + data.stats[1].base_stat;
     def.innerText = 'Def: ' + data.stats[2].base_stat;
