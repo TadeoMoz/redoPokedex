@@ -1,20 +1,22 @@
-const pokeInput = document.getElementById('buscar'); /* buscarPoke */
-const nombre = document.getElementById('nombrePoke'); /* nombrePokemon */
-const pokeId = document.getElementById('pokeId');
-const pic = document.getElementById('pokePic');
-const tipo = document.getElementById('tipoPoke'); /* agregarPoke */
-const hp = document.getElementById('hp'); /* Añadir texto */
-const atk = document.getElementById('atk');
-const def = document.getElementById('def');
-const satk = document.getElementById('satk');
-const sdef = document.getElementById('sdef');
-const spd = document.getElementById('spd');
+const
+    pokeInput = document.getElementById('buscar'), /* buscarPoke */
+    nombre = document.getElementById('nombrePoke'), /* nombrePokemon */
+    pokeId = document.getElementById('pokeId'),
+    pic = document.getElementById('pokePic'),
+    tipo = document.getElementById('tipoPoke'), /* agregarPoke */
+    hp = document.getElementById('hp'), /* Añadir texto */
+    atk = document.getElementById('atk'),
+    def = document.getElementById('def'),
+    satk = document.getElementById('satk'),
+    sdef = document.getElementById('sdef'),
+    spd = document.getElementById('spd')
+;
 
 const buscarPoke = () => {
     let pokeNombre = pokeInput.value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeNombre}`;
 
-    fetch(url).then((res) => { /* Promesa Async */
+    fetch(url).then((res) => {
         if(res.status != '200') {
             console.log('error'); 
         } else {
@@ -31,6 +33,7 @@ nombrePokemon = (data) => {
     nombre.innerText = data.name.toUpperCase();
     pokeId.innerText = data.id;
 
+    pokeId.setAttribute('style', 'display:block;')
     pic.setAttribute('style', 'display:block;');
     pic.src = data.sprites.other.home.front_default;
     
@@ -38,14 +41,19 @@ nombrePokemon = (data) => {
 }
 
 function agregarTipo(data) {
+    let tipoPoke = document.getElementById('tipoPoke');
+    /* Si exite <li>, se "vacia" para agregar los nuevos Tipos */
+    tipoPoke.innerHTML = ''; 
+
     for(let i = 0; i < data.types.length ; i++) {
-        let a = document.createElement('em');
         
-        a.classList.add('tipoPk');
+        let tipoPokemon = document.createElement('li');
         
-        a.innerText = data.types[i].type.name.toLowerCase();
-        tipo.appendChild(a);
-    }    
+        tipoPokemon.classList.add('tipoPk');
+        
+        tipoPokemon.innerText = data.types[i].type.name.toLowerCase();
+        tipo.appendChild(tipoPokemon);
+    }
 }
 
 statPokemon = (data) => { /* Agrego texto al documento  */

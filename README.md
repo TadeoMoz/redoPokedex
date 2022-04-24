@@ -1,14 +1,27 @@
-# redoPokedex
-Pokédex utilizando CSS, HTML y JavaScript, se realizo como ejercicio para Launch X pero esta es otra versión.
+# Sobre
+Para el desarrollo de la Pokédex se utilizo en su mayoria CSS, JavaScript para añadir funciones y se esta consumiendo la API de Pokeapi para obtener los datos del pokemon.
 
-Se utilizo mayormente CSS para la generación del documento, javascript para añadir el texto y haciendo uso de la API de Pokeapi:
+## redoPokedex
+Se realizo como ejercicio para Launch X, pero me propuse el reto de volverlo a hacer ya que no me gusto como quedo mi primera versión.
+
+## Sitios y herramientas
 
 https://pokeapi.co/
 
-## Actualización
-Se cambiaron los valores de PX a REM.
+https://css-tricks.com/
 
-Se añadieron variables globales a CSS
+https://cssgradient.io/
+
+https://html-css-js.com/css/generator/box-shadow/
+
+## Actualización
+La imagen.
+
+Se añadio linear-gradient.
+
+Se añadieron finalmente los tipos que tiene un pokemon.
+
+Se estilizo los Tipos, ID y la imagen del pokemon.
 
 ## Imagen
-![version 3](pokedex-v2.png)
+![version 4](pokedex-v2.png)
